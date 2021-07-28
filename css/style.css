@@ -1,0 +1,363 @@
+@charset "UTF-8";
+@media (max-width: 767px) {
+  .br-sp {
+    display: none;
+  }
+}
+
+/* ================================
+reset.css
+================================ */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "TsukuARdGothic-Regular", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333333;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+a:hover {
+  opacity: 0.5;
+}
+
+.section {
+  padding: 30px 0 90px;
+}
+@media (max-width: 767px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 700;
+  text-align: center;
+  padding: 50px;
+}
+
+.inner {
+  width: 850px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) and (max-width: 850px) {
+  .inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .inner {
+    width: 332px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* ================================
+header
+================================ */
+.header {
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.header__bg {
+  background: url(../img/hiroyoshi-urushima-D2dyWf0NImU-unsplash.jpg) no-repeat center center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: inherit;
+}
+
+.header__logo {
+  padding-left: 100px;
+}
+.header__logo img {
+  width: 50%;
+  padding-top: 12px;
+}
+
+.header__nav {
+  padding-right: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+.header__nav li:not(:first-child) {
+  margin-left: 40px;
+}
+.header__nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+}
+
+/* ================================
+firstView
+================================ */
+.firstView {
+  height: 740px;
+}
+
+.firstView__img {
+  position: relative;
+  padding: 160px 0 53px;
+}
+.firstView__img::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  right: 20px;
+  width: 80%;
+  height: 70%;
+  background-image: radial-gradient(#999 30%, rgba(0, 0, 0, 0) 31%), radial-gradient(#999 30%, rgba(0, 0, 0, 0) 31%);
+  background-size: 6px 6px;
+  background-position: 0 0, 3px 3px;
+  z-index: -1;
+}
+.firstView__img img {
+  width: 80%;
+}
+
+.firstView__title {
+  position: absolute;
+  top: 66%;
+  left: 59%;
+  color: white;
+  background-color: #333333;
+  line-height: initial;
+}
+
+/* ================================
+works
+================================ */
+.works {
+  background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.5) 47%, rgba(0, 0, 0, 0.5) 100%);
+  background-blend-mode: screen;
+}
+
+.works__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 30px;
+}
+
+.works__item {
+  width: calc(33.3% - 8px * 2 / 3);
+  padding: 16px;
+}
+
+.works__link {
+  text-align: right;
+  font-size: 20px;
+}
+.works__link a {
+  text-decoration: none;
+  font-weight: 700;
+  padding-right: 14px;
+  position: relative;
+}
+.works__link a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 7px;
+  height: 11px;
+  background: url(../img/news-arrow@2x.png) no-repeat center center/contain;
+}
+
+/* ================================
+skill
+================================ */
+.skill__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.skill__item {
+  width: calc(33.3% - 8px * 2 / 3);
+  padding: 16px;
+}
+
+.skill__img h3 {
+  text-align: center;
+}
+
+/* ================================
+service
+================================ */
+.services {
+  background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255, 255, 255, 0.5) 47%, rgba(0, 0, 0, 0.5) 100%);
+  background-blend-mode: screen;
+}
+
+.services__contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.services__lead {
+  margin: auto 0;
+  padding-left: 40px;
+}
+.services__lead p {
+  border-bottom: solid 1px #333333;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.services__button {
+  padding-top: 20px;
+  text-align: right;
+}
+.services__button a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 20px;
+  position: relative;
+}
+.services__button a::after {
+  content: "";
+  position: absolute;
+  right: -15%;
+  top: 55%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 7px;
+  height: 11px;
+  background: url(../img/news-arrow@2x.png) no-repeat center center/contain;
+}
+
+/* ================================
+contact
+================================ */
+.contact {
+  text-align: center;
+}
+
+.contact__lead {
+  padding-bottom: 30px;
+}
+
+.contact__img img {
+  width: 25%;
+}
+
+/* ================================
+footer
+================================ */
+.footer {
+  background: url(../img/hiroyoshi-urushima-D2dyWf0NImU-unsplash.jpg) no-repeat center bottom;
+  text-align: center;
+  height: 540px;
+}
+
+.footer__inner {
+  padding: 0 10px;
+}
+
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 30px;
+}
+
+.footer__about {
+  background-color: #fff;
+  border-radius: 8px;
+  width: 45%;
+}
+.footer__about img {
+  width: 35%;
+  padding-top: 10px;
+}
+.footer__about p {
+  font-size: 13px;
+  padding: 0 30px;
+  text-align: left;
+}
+
+.footer__link img {
+  width: 7%;
+  margin: 10px;
+  padding: 10px 0;
+}
+
+.footer__twitter {
+  width: 45%;
+  margin: auto 0;
+}
+
+.footer__copyright {
+  color: #fff;
+  font-size: 12px;
+  padding-top: 20px;
+}
