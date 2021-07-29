@@ -47,6 +47,10 @@ body{
     line-height: 1.6;
     background-color: #fff;
     color: $color-text;
+
+    @include mq('sp') {
+        font-size: 12px;
+    }
 }
 
 img {
@@ -94,6 +98,11 @@ a {
     font-weight: 700;
     text-align: center;
     padding: 50px;
+
+    @include mq('sp') {
+        font-size: 20px;
+        padding: 20px;
+    }
 }
 
 .inner {
@@ -107,12 +116,17 @@ a {
     }
 
     @include mq('sp') {
-        width: 332px;
+        width: 80%;
         padding-left: 16px;
         padding-right: 16px;
     }
 }
-
+// アニメーション
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
 /* ================================
 header
 ================================ */
@@ -124,9 +138,17 @@ header
     z-index: 100;
     top: 0;
     left: 0;
+
+    @include mq('tab') {
+        height: 70px;
+    }
+
+    @include mq('sp') {
+        height: 60px;
+    }
 }
 .header__bg {
-    background: url(../img/hiroyoshi-urushima-D2dyWf0NImU-unsplash.jpg) no-repeat center center;
+    background: url(../img/hiroyoshi-urushima-D2dyWf0NImU-unsplash.jpg) no-repeat center center / cover;
     display: flex;
     align-items: center;
     height: inherit;
@@ -171,11 +193,18 @@ firstView
 .firstView {
     height: 740px;
     // position: relative;
+
+    @include mq('sp') {
+        height: 800px;
+    }
 }
 .firstView__content {
-
 }
 .firstView__inner {
+    @include mq('sp') {
+        margin: 32px auto;
+        text-align: center;
+    }
 
 }
 .firstView__img {
@@ -207,7 +236,11 @@ firstView
     color: white;
     background-color: $color-text;
     line-height: initial;
-    }
+
+     @include mq('sp') {
+         left: 43%;
+     }
+}
 
 /* ================================
 works
@@ -225,16 +258,27 @@ works
 .works__items {
     display: flex;
     padding-bottom: 30px;
+
+    @include mq('sp') {
+        display: block;
+    }
 }
 .works__item {
     width: calc(33.3% - 8px * 2 / 3);
     padding: 16px;
+    margin: auto;
+
+    @include mq('sp') {
+        width: 100%;
+    }
 }
 .works__img {
+    // @include mq('sp') {
+    //     width: 70%;
+    // }
     a {
-
+        
     }
-
     img {
 
     }
@@ -242,6 +286,10 @@ works
 .works__link {
     text-align: right;
     font-size: 20px;
+
+    @include mq('sp') {
+        font-size: 15px;
+    }
     
     a {
         text-decoration: none;
@@ -277,10 +325,20 @@ skill
 }
 .skill__items {
     display: flex;
+    justify-content: space-around;
+
+    @include mq('sp') {
+        flex-wrap: wrap;
+    }
 }
 .skill__item {
-    width: calc(33.3% - 8px * 2 / 3);
+    margin: auto;
     padding: 16px;
+
+    @include mq('sp') {
+        width: calc(33.3% - 8px * 2 / 3);
+        margin: auto;
+    }
 }
 .skill__img {
     img {
@@ -288,6 +346,10 @@ skill
     }
     h3 {
         text-align: center;
+
+        @include mq('sp') {
+            font-size: 10px;
+        }
     }
 }
 
@@ -306,27 +368,61 @@ service
 }
 .services__contents {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+
+    @include mq('sp') {
+        display: block;
+    }
+    
 }
 .services__lead {
     margin: auto 0;
     padding-left: 40px;
     
+    @include mq('sp') {
+        padding-left: 0;
+        padding-bottom: 20px;
+    }
+
+    @include mq('tab') {
+        padding: 0 10px;
+        padding-left: 0;
+    }
+
     p {
         border-bottom: solid 1px #333333;
         font-size: 20px;
         font-weight: 700;
+
+        @include mq('sp') {
+            font-size: 13px;
+        }
+        @include mq('tab') {
+            font-size: 16px;
+
+        }
     }
 }
 .services__button {
     padding-top: 20px;
     text-align: right;
 
+    @include mq('sp') {
+        padding-top: 0;
+    }
+
     a {
         text-decoration: none;
         font-weight: 700;
         font-size: 20px;
         position: relative;
+
+        @include mq('sp') {
+            font-size: 15px;
+        }
+        @include mq('tab') {
+            font-size: 18px;
+        }
 
         &::after {
             content: "";
@@ -337,11 +433,17 @@ service
             width: 7px;
             height: 11px;
             background: url(../img/news-arrow@2x.png) no-repeat center center / contain;
+
+            @include mq('tab') {
+
+            }
         }
     }
 }
 .services__img {
-
+    @include mq('tab') {
+        padding: 0 10px;
+    }
 }
 /* ================================
 contact
@@ -372,23 +474,65 @@ contact
 footer
 ================================ */
 .footer {
-    background: url(../img/hiroyoshi-urushima-D2dyWf0NImU-unsplash.jpg) no-repeat center bottom ;
+    background: url(../img/hiroyoshi-urushima-D2dyWf0NImU-unsplash.jpg) no-repeat center bottom / cover ;
     text-align: center;
-    height: 540px;
 }
 .footer__inner {
     padding: 0 10px;
+}
+#page_top {
+    position: fixed;
+    right: 1rem;
+    bottom: 2rem;
+    height: 3rem;
+    text-decoration: none;
+    font-weight: bold;
+    transform: rotate(90deg);
+    font-size: 80%;
+    line-height: 1.5rem;
+    color: color(sub);
+    padding: 0 0 0 35px;
+    border-top: solid 1px;
+
+    &:hover {
+        color: color(main);
+        transition: all 0.5s;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 1rem;
+        border-top: solid 1px;
+        transform: rotate(35deg);
+        transform-origin: left top;
+    }
+    
+    a {
+        text-decoration: none;
+    }
 }
 .footer__content {
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
+
+    @include mq('sp') {
+        display: block;
+    }
     
 }
 .footer__about {
     background-color: #fff;
     border-radius: 8px;
     width: 45%;
+
+    @include mq('sp') {
+        width: 100%;
+    }
 
     img {
         width: 35%;
@@ -414,6 +558,11 @@ footer
 .footer__twitter {
     width: 45%;
     margin: auto 0;
+
+    @include mq('sp') {
+        width: 100%;
+        padding-top: 20px;
+    }
 }
 .footer__copyright {
     color: #fff;

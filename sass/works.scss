@@ -3,7 +3,7 @@ $color-text:#333333;
 $color-accents:#FFFEDD;
 $color-bgc:#FAFFFA;
 
-$layout-width-inner: 800px;
+$layout-width-inner: 750px;
 
 //ブレイクポイント
 $breakpoints: (
@@ -82,7 +82,7 @@ a {
 }
 
 .section {
-    padding: 30px 0 10px;
+    padding: 10px 0 10px;
 
     @include mq('sp') {
         padding-top: 50px;
@@ -239,5 +239,93 @@ about
     }
 }
 /* ================================
-point
+workspage
 ================================ */
+.workspage {
+
+}
+.workspage__inner {
+
+}
+.workspage__box {
+}
+.workspage__title {
+    display: flex;
+    align-items: center;
+    margin: 3.5rem auto 0;
+    text-align: center;
+
+    h3 {
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+// タイトル横の下線
+    &::after {
+        border-top: 1px solid;
+        content: "";
+        flex-grow: 1;
+        margin-left: 1.5rem;
+    }
+}
+.workspage__txt {
+    width: 90%;
+    padding: 2rem;
+//テキストの背景
+    border-radius: 0.5rem;
+    background-color: #f5f5f5;
+    margin-left: auto;
+    margin-top: 1rem;
+}
+/* ================================
+footer
+================================ */
+.footer {
+    width: 100%;
+    height: 5.5rem;
+    background-color: #a1b9a0;
+    color: #fff;
+    margin-top: 5rem;
+    font-size: 12px;
+}
+#page_top {
+    position: fixed;
+    right: 1rem;
+    bottom: 2rem;
+    height: 3rem;
+    text-decoration: none;
+    font-weight: bold;
+    transform: rotate(90deg);
+    font-size: 80%;
+    line-height: 1.5rem;
+    color: color(sub);
+    padding: 0 0 0 35px;
+    border-top: solid 1px;
+
+    &:hover {
+        color: color(main);
+        transition: all 0.5s;
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 1rem;
+        border-top: solid 1px;
+        transform: rotate(35deg);
+        transform-origin: left top;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+}
+.footer__copyright {
+    text-align: center;
+    padding: 1rem;
+}
