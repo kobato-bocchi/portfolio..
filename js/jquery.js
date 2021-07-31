@@ -1,28 +1,13 @@
-$(function () {
-    $('.header-btn').click(function () {
-        $(this).toggleClass('active');
-
-        if ($(this).hasClass('active')) {
-            $('.gnav').addClass('active');
-        } else {
-            $('.gnav').removeClass('active');
-        }
-        $('body').toggleClass('noscroll');
-    });
+$(".openbtn").click(function () {
+    $(this).toggleClass('active');
+    // $("#g-nav").toggleClass('panelactive');
+    // $(".circle-bg")toggleClass('circleactive');
 });
-
-$(function () {
-    $(window).scroll(function () {
-        const wHeight = $(window).height();
-        const scrollAmount = $(window).scrollTop();
-        $('.scrollanime').each(function () {
-            const targetPosition = $(this).offset().top;
-            if (scrollAmount > targetPosition - wHeight + 60) {
-                $(this).addClass("fadeInDown");
-            }
-        });
-    });
-});
+// $("#g-nav a").click(function () {
+//     $(".openbtn").removeClass('active');
+//     $("#g-nav").removeClass('panelactive');
+//     $(".circle-bg").removeClass('circleactive');
+// });
 
 // 追従toppage
 $(function () {
