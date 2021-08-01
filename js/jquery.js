@@ -1,7 +1,7 @@
 $(".openbtn").click(function () {
     $(this).toggleClass('active');
     $("#g-nav").toggleClass('panelactive');
-    $(".circle-bg")toggleClass('circleactive');
+    $(".circle-bg").toggleClass('circleactive');
 });
 $("#g-nav a").click(function () {
     $(".openbtn").removeClass('active');
