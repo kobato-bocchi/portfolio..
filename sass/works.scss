@@ -102,6 +102,7 @@ a {
 
     @include mq('sp') {
         font-size: 30px;
+        padding-top: 80px;
     }
 }
 
@@ -142,15 +143,37 @@ header
     z-index: 100;
     top: 0;
     left: 0;
+
+    @include mq('tab') {
+        height: 70px;
+    }
+
+    @include mq('sp') {
+        height: 60px;
+    }
 }
 .header__bg {
-    background: url(../img/hiroyoshi-urushima-D2dyWf0NImU-unsplash.jpg) no-repeat center center;
+    background: url(../img/hiroyoshi-urushima-D2dyWf0NImU-unsplash.jpg) no-repeat center center / cover;
     display: flex;
-    align-items: center;
+    justify-content: space-around;
     height: inherit;
 }
+.header__contents {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mq('sp') {
+        width: 100%;
+    }
+}
 .header__logo {
-    padding-left: 100px;
+    // padding-left: 100px;
+
+    @include mq('sp') {
+        padding-left: 30px;
+    }
 
     a {
 
@@ -161,29 +184,209 @@ header
     }
 
 }
-.header__nav {
-    padding-right: 100px;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+#g-nav {
+    padding-right: 30px;
 
-    li {
-        &:not(:first-child) {
-        margin-left: 40px;
-        }
+    @include mq('sp') {
+        position: absolute;
+        right: 0;
 
-        a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            position: relative;
+        ul {
+            opacity: 0;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 }
-.header__nav-item {
+#g-nav.panelactive {
+    @include mq('sp') {
 
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        
+        #g-nav-list {
+            display: block;
+        }
+        
+        ul {
+            opacity: 1;
+            
+            li {
+                animation-name: gnaviAnime;
+                animation-duration: 1s;
+                animation-delay: .2s;
+                animation-fill-mode: forwards;
+                opacity: 0;
+            }
+        }
+    }
 }
+#g-nav-list {
+    ul {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
 
+        @include mq('pc') {
+            // padding-right: 100px;
+        }
+        
+        @include mq('sp') {
+            display: block;
+        }
+
+        li {
+            @include mq('pc') {
+                &:not(:first-child) {
+                    margin-left: 40px;
+                }
+            }
+
+            @include mq('tab') {
+                &:not(:first-child) {
+                    margin-left: 40px;
+                }
+            }
+
+            @include mq('sp') {
+                padding: 15px;
+            }
+            
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: 700;
+                position: relative;
+            }
+
+        }
+    }
+
+    @include mq('sp') {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        height: 100vh;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+@include mq('sp') {
+    @keyframes gnaviAnime {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+.circle-bg {
+    @include mq('sp') {
+        position: fixed;
+        z-index: 3;
+        // 丸の形
+        width: 14px;
+        height: 100px;
+        // border-radius: 50%;
+        background: #E3CA7E;
+        // 丸のスタート位置と形状
+        // scaleを始めは0に
+        transform: scale(0);
+        right: -50px;
+        top: -50px;
+        // 0.6秒かけてアニメーション
+        transition: all .6s;
+    }
+}
+.circle-bg.circleactive {
+    @include mq('sp') {
+        transform: scale(50);
+    }
+}
+// ハンバーガーメニューボタンーーーーーーーーーーーーーーー
+// ボタン外側
+@include mq('sp') {
+    .openbtn {
+        position: relative;
+        background: #E3CA7E;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        z-index: 9999;//ボタンを最前面に
+        
+        // ボタン内側
+        span {
+            display: inline-block;
+            transition: all .4s; //アニメーションの設定
+            position: absolute;
+            left: 14px;
+            height: 2px;
+            border-radius: 5px;
+            background: #000;
+            width: 45%;
+
+            &:nth-of-type(1) {
+                top: 13px;
+            }
+            &:nth-of-type(2) {
+                top: 19px;
+            }
+            &:nth-of-type(3) {
+                top: 25px;
+
+                &::after { //3つ目の要素のafterにMENU表示を指定
+                    content: "Menu";
+                    position: absolute;
+                    top: 5px;
+                    left: -2px;
+                    color: #000;
+                    font-size: 0.6rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    .openbtn.active {
+        position: relative;
+        top: 5px;
+        left: 85%;
+
+        span {
+            &:nth-of-type(1) {
+                top: 14px;
+                left: 18px;
+                transform: translateY(6px) rotate(-45deg);
+                width: 30%;
+            }
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+            &:nth-of-type(3) {
+                top: 26px;
+                left: 18px;
+                transform: translateY(-6px) rotate(45deg);
+                width: 30%;
+
+                &::after {
+                    content: "Close";
+                    transform: translateY(0) rotate(-45deg);
+                    top: 5px;
+                    left: 4px;
+                }
+            }
+        }
+    }
+}
+// ーーーーーーーーーーーーーーーーーーーーーーーーー
 /* ================================
 main
 ================================ */
@@ -197,9 +400,9 @@ main
 .main__inner {
 
 }
-.main__title {
-    padding-top: 150px;
-}
+// .main__title {
+//     padding-top: 150px;
+// }
 .main__subtitle {
     padding-bottom: 50px;
 
@@ -216,7 +419,7 @@ about
 ================================ */
 .about {
     @include mq('sp') {
-        padding: 0;
+        padding-top: 0;
     }
 }
 .about__inner {
