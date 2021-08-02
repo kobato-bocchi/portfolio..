@@ -81,7 +81,8 @@ a:hover {
 }
 @media (max-width: 767px) {
   .title {
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: bold;
     padding: 10px;
   }
 }
@@ -420,8 +421,9 @@ firstView
 }
 @media (max-width: 767px) {
   .firstView__title {
-    left: 32%;
-    top: 93%;
+    font-size: 30px;
+    left: 35%;
+    top: 56%;
     color: #333333;
     background: none;
   }

@@ -100,7 +100,8 @@ a {
     padding: 50px;
 
     @include mq('sp') {
-        font-size: 30px;
+        font-size: 25px;
+        font-weight: bold;
         padding: 10px;
     }
 }
@@ -439,8 +440,9 @@ firstView
     line-height: initial;
 
      @include mq('sp') {
-         left: 32%;
-         top: 93%;
+         font-size: 30px;
+         left: 35%;
+         top: 56%;
          color: $color-text;
          background: none;
      }
