@@ -100,8 +100,8 @@ a {
     padding: 50px;
 
     @include mq('sp') {
-        font-size: 20px;
-        padding: 20px;
+        font-size: 30px;
+        padding: 10px;
     }
 }
 
@@ -116,7 +116,7 @@ a {
     }
 
     @include mq('sp') {
-        width: 80%;
+        width: 90%;
         padding-left: 16px;
         padding-right: 16px;
     }
@@ -387,7 +387,7 @@ firstView
     // position: relative;
 
     @include mq('sp') {
-        height: 800px;
+        height: 550px;
     }
 }
 .firstView__content {
@@ -461,13 +461,14 @@ works
     margin: auto;
 
     @include mq('sp') {
-        width: 100%;
+        width: 85%;
     }
 }
 .works__img {
-    // @include mq('sp') {
-    //     width: 70%;
-    // }
+    @include mq('sp') {
+        margin: auto;
+        text-align: center;
+    }
     a {
         
     }

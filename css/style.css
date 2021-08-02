@@ -81,8 +81,8 @@ a:hover {
 }
 @media (max-width: 767px) {
   .title {
-    font-size: 20px;
-    padding: 20px;
+    font-size: 30px;
+    padding: 10px;
   }
 }
 
@@ -99,7 +99,7 @@ a:hover {
 }
 @media (max-width: 767px) {
   .inner {
-    width: 80%;
+    width: 90%;
     padding-left: 16px;
     padding-right: 16px;
   }
@@ -375,7 +375,7 @@ firstView
 }
 @media (max-width: 767px) {
   .firstView {
-    height: 800px;
+    height: 550px;
   }
 }
 
@@ -447,10 +447,16 @@ works
 }
 @media (max-width: 767px) {
   .works__item {
-    width: 100%;
+    width: 85%;
   }
 }
 
+@media (max-width: 767px) {
+  .works__img {
+    margin: auto;
+    text-align: center;
+  }
+}
 .works__link {
   text-align: right;
   font-size: 20px;

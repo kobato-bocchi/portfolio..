@@ -47,6 +47,10 @@ body{
     line-height: 1.6;
     background-color: #fff;
     color: $color-text;
+
+    @include mq('sp') {
+        font-size: 0.75rem;
+    }
 }
 
 img {
@@ -85,8 +89,8 @@ a {
     padding: 10px 0 10px;
 
     @include mq('sp') {
-        padding-top: 50px;
-        padding-bottom: 60px;
+        padding-top: 20px;
+        padding-bottom: 30px;
     }
 
 }
@@ -95,6 +99,10 @@ a {
     font-size: 35px;
     font-weight: 700;
     text-align: center;
+
+    @include mq('sp') {
+        font-size: 30px;
+    }
 }
 
 .inner {
@@ -108,9 +116,9 @@ a {
     }
 
     @include mq('sp') {
-        width: 332px;
-        padding-left: 16px;
-        padding-right: 16px;
+        width: 370px;
+        padding-left: 4px;
+        padding-right: 4px;
     }
 }
 dl {
@@ -181,6 +189,10 @@ main
 ================================ */
 .main {
     text-align: center;
+
+    @include mq('sp') {
+        padding-bottom: 0;
+    }
 }
 .main__inner {
 
@@ -190,6 +202,10 @@ main
 }
 .main__subtitle {
     padding-bottom: 50px;
+
+    @include mq('sp') {
+    padding-bottom: 25px;
+    }
 }
 .main__img {
     width: 80%;
@@ -199,7 +215,9 @@ main
 about
 ================================ */
 .about {
-
+    @include mq('sp') {
+        padding: 0;
+    }
 }
 .about__inner {
 
@@ -242,7 +260,9 @@ about
 workspage
 ================================ */
 .workspage {
-
+    @include mq('sp') {
+        padding: 0;
+    }
 }
 .workspage__inner {
 
